@@ -8,10 +8,11 @@ import (
 )
 
 type Order struct {
-	OrderId string `gorm:"column:order_id;primaryKey"`
-	OrderedAt time.Time `gorm:"column:ordered_at"`
-	CustomerName string `gorm:"column:customer_name"`
+	OrderId string `gorm:"column:order_id;primaryKey" json:"order_id"`
+	OrderedAt time.Time `gorm:"column:ordered_at" json:"ordered_at"`
+	CustomerName string `gorm:"column:customer_name" json:"customer_name"`
 	Items []Item 
+	DeletedAt gorm.DeletedAt
 }
 
 func (o *Order) BeforeCreate(tx *gorm.DB) error {

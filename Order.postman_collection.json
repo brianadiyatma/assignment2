@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "f0e3e928-b9d7-49dd-b797-bf6f44435d6f",
+		"name": "Order",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23663055"
+	},
+	"item": [
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"customer_name\": \"Jackson Chan\",\r\n  \"Items\": [\r\n    {\r\n      \"item_code\": \"4321\",\r\n      \"description\": \"Iphone 69\",\r\n      \"quantity\": 10\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/order"
+			},
+			"response": [
+				{
+					"name": "Create Order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer_name\": \"Jackson Chan\",\r\n  \"Items\": [\r\n    {\r\n      \"item_code\": \"4321\",\r\n      \"description\": \"Iphone 6\",\r\n      \"quantity\": 10\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/order"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Mar 2024 15:02:37 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "369"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"response_code\": 201,\n    \"success\": true,\n    \"error\": null,\n    \"data\": {\n        \"order_id\": \"cb82588a-7811-4aa8-90ef-c07d46df6f39\",\n        \"ordered_at\": \"2024-03-14T22:02:37.4846812+07:00\",\n        \"customer_name\": \"Jackson Chan\",\n        \"Items\": [\n            {\n                \"id\": \"e953af1e-7972-4a46-910a-0dcafb57b6d4\",\n                \"item_code\": \"4321\",\n                \"description\": \"Iphone 6\",\n                \"quantity\": 10,\n                \"order_id\": \"cb82588a-7811-4aa8-90ef-c07d46df6f39\"\n            }\n        ],\n        \"DeletedAt\": null\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n   \"order_id\": \"7826738d-92f8-4a47-8f91-3a388162f1f7\",\r\n  \"customer_name\": \"Jackson Chan\",\r\n  \"Items\": [\r\n    {\r\n      \"item_id\": \"1969dd36-375a-4a3a-bfc0-d2f501d70fb0\",\r\n      \"item_code\": \"4321\",\r\n      \"description\": \"Iphone 69\",\r\n      \"quantity\": 10\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8000/order"
+			},
+			"response": [
+				{
+					"name": "Update Order",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n   \"order_id\": \"cb82588a-7811-4aa8-90ef-c07d46df6f39\",\r\n  \"customer_name\": \"Jackson\",\r\n  \"Items\": [\r\n    {\r\n      \"item_id\": \"e953af1e-7972-4a46-910a-0dcafb57b6d4\",\r\n      \"item_code\": \"1234\",\r\n      \"description\": \"Iphone 70\",\r\n      \"quantity\": 10\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8000/order"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Mar 2024 15:03:06 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"response_code\": 200,\n    \"success\": true,\n    \"error\": null,\n    \"data\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "Get All Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8000/order/"
+			},
+			"response": [
+				{
+					"name": "Get All Order",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/order/"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Mar 2024 15:05:08 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "513"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"response_code\": 200,\n    \"success\": true,\n    \"error\": null,\n    \"data\": [\n        {\n            \"order_id\": \"cb82588a-7811-4aa8-90ef-c07d46df6f39\",\n            \"ordered_at\": \"0001-01-01T07:00:00+07:00\",\n            \"customer_name\": \"Jackson\",\n            \"Items\": [\n                {\n                    \"id\": \"e953af1e-7972-4a46-910a-0dcafb57b6d4\",\n                    \"item_code\": \"4321\",\n                    \"description\": \"Iphone 6\",\n                    \"quantity\": 10,\n                    \"order_id\": \"cb82588a-7811-4aa8-90ef-c07d46df6f39\"\n                },\n                {\n                    \"id\": \"d56cbc3f-c675-4e26-93a4-2e65aa169786\",\n                    \"item_code\": \"1234\",\n                    \"description\": \"Iphone 70\",\n                    \"quantity\": 10,\n                    \"order_id\": \"cb82588a-7811-4aa8-90ef-c07d46df6f39\"\n                }\n            ],\n            \"DeletedAt\": null\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete Order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8000/order/cb82588a-7811-4aa8-90ef-c07d46df6f39"
+			},
+			"response": [
+				{
+					"name": "Delete Order",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/order/cb82588a-7811-4aa8-90ef-c07d46df6f39"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 14 Mar 2024 15:06:00 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "61"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"response_code\": 200,\n    \"success\": true,\n    \"error\": null,\n    \"data\": null\n}"
+				}
+			]
+		}
+	]
+}
